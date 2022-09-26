@@ -6,6 +6,7 @@ const deleteUser = document.querySelector('#deleteUser')
 const firstNameUpdate = document.querySelector('#firstNameUpdate')
 const lastNameUpdate = document.querySelector('#lastNameUpdate')
 const updateUser = document.querySelector('#updateUser')
+const detailUser = document.querySelector('#detailUser')
 
 sendDataButton.addEventListener('click', () => {
   let url = 'http://localhost:5000/users'
@@ -50,4 +51,13 @@ updateUser.addEventListener('click', (e) => {
       lastName: lastNameUpdate.value,
     }),
   }).then((response) => console.log(response))
+})
+
+detailUser.addEventListener('click', (e) => {
+  e.preventDefault()
+
+  let id = detailUser.dataset.id
+  let url = `http://localhost:5000/users/${id}`
+
+  fetch(url).then((response) => console.log(response))
 })
