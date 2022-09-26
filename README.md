@@ -5,3 +5,5 @@
 ## 추가 사항
 
 1. mysql 연동
+
+2. ![users 테이블](/screenshot.png)
